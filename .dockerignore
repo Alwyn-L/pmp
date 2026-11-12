@@ -1,0 +1,13 @@
+# 前端构建上下文为仓库根目录，排除大体积/敏感内容
+.git
+.gitignore
+.idea
+.vscode
+node_modules
+**/node_modules
+deploy/backups
+deploy/.env
+deploy/.env.*
+!deploy/.env.example
+docs/ui-demo/tools
+*.log

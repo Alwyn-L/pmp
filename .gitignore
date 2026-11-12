@@ -83,6 +83,14 @@ GenerateHash.class
 login.json
 
 ######################################################################
+# Deploy（.env 含明文密钥与备份数据，禁止入库）
+deploy/.env
+deploy/.env.dev
+deploy/.env.test
+deploy/.env.prod
+deploy/backups/
+
+######################################################################
 # Misc
 !*/build/*.java
 !*/build/*.html

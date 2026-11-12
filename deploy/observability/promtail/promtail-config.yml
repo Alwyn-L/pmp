@@ -1,0 +1,55 @@
+# =============================================================================
+# Promtail：直接读取 Docker json-file 日志文件
+# 说明：为避免挂载 /var/run/docker.sock（等价于宿主机 root 权限）带来的
+#       提权风险，这里不启用 docker_sd_configs，改为按路径抓取容器日志。
+#       如需按服务名打标签，推荐改用 Loki Docker 日志驱动插件。
+# =============================================================================
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+  log_level: warn
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push
+    batchwait: 1s
+    batchsize: 1048576
+    backoff_config:
+      min_period: 500ms
+      max_period: 5s
+      max_retries: 10
+
+scrape_configs:
+  - job_name: docker-containers
+    static_configs:
+      - targets: ["localhost"]
+        labels:
+          job: docker
+          host: pmp-node
+          __path__: /var/lib/docker/containers/*/*-json.log
+    pipeline_stages:
+      # json-file 驱动单行结构：{"log":"...","stream":"stdout","time":"..."}
+      - json:
+          expressions:
+            output: log
+            stream: stream
+            timestamp: time
+      - timestamp:
+          source: timestamp
+          format: RFC3339Nano
+      # 丢弃历史日志：宿主机上已有其它业务栈（如 Dify）的存量日志，
+      # 超出 Loki 保留窗口的条目会被 400 拒绝，这里在采集端直接丢弃 24h 之前的行
+      - drop:
+          older_than: 24h
+          drop_counter_reason: log_too_old
+      - labels:
+          stream:
+      - regex:
+          source: filename
+          expression: '/containers/(?P<container_id>[0-9a-f]{12})'
+      - labels:
+          container_id:
+      - output:
+          source: output

@@ -1,0 +1,51 @@
+# =============================================================================
+# 开发环境叠加编排（仅本机使用，禁止用于生产）
+# 用法：
+#   docker compose --env-file .env.dev -f docker-compose.yml -f docker-compose.dev.yml up -d
+# 差异点：
+#   1. 仅绑定 127.0.0.1，避免开发机端口暴露到局域网；
+#   2. 放开 data 网络的 internal 限制，便于本机客户端直连中间件；
+#   3. Kafka 增加宿主机监听端口（29092），集群内仍用 kafka:9092；
+#   4. 屏蔽依赖健康等待，便于单独调试某个中间件。
+# =============================================================================
+services:
+  frontend:
+    ports:
+      - "127.0.0.1:${HTTP_PORT:-8080}:8080"
+
+  backend:
+    environment:
+      APP_ENV: dev
+      SPRING_PROFILES_ACTIVE: dev
+      JAVA_OPTS: ${JAVA_OPTS:--XX:MaxRAMPercentage=75 -XX:+UseG1GC -Djava.io.tmpdir=/tmp}
+    ports:
+      - "127.0.0.1:${BACKEND_DEBUG_PORT:-8081}:8080"
+
+  postgres:
+    ports:
+      - "127.0.0.1:${POSTGRES_HOST_PORT:-5432}:5432"
+
+  redis:
+    ports:
+      - "127.0.0.1:${REDIS_HOST_PORT:-6379}:6379"
+
+  kafka:
+    environment:
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,PLAINTEXT_HOST://0.0.0.0:29092,CONTROLLER://0.0.0.0:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+    ports:
+      - "127.0.0.1:${KAFKA_HOST_PORT:-29092}:29092"
+
+  minio:
+    ports:
+      - "127.0.0.1:${MINIO_API_PORT:-9000}:9000"
+      - "127.0.0.1:${MINIO_CONSOLE_PORT:-9001}:9001"
+
+  grafana:
+    ports:
+      - "127.0.0.1:${GRAFANA_PORT:-3000}:3000"
+
+networks:
+  data:
+    internal: false

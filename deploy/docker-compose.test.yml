@@ -1,0 +1,28 @@
+# =============================================================================
+# 测试（预发）环境叠加编排
+# 用法：
+#   docker compose --env-file .env.test -f docker-compose.yml -f docker-compose.test.yml up -d
+# 差异点：
+#   1. 使用独立的项目名与端口，可与生产同机并存；
+#   2. 仅前端入口对外，中间件保持内部访问；
+#   3. 日志级别调到 DEBUG 便于问题定位，资源配额适度下调。
+# =============================================================================
+services:
+  frontend:
+    ports:
+      - "${HTTP_BIND:-0.0.0.0}:${HTTP_PORT:-8080}:8080"
+
+  backend:
+    environment:
+      APP_ENV: test
+      SPRING_PROFILES_ACTIVE: test
+      LOGGING_LEVEL_COM_PMP: DEBUG
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 2g
+
+  grafana:
+    ports:
+      - "127.0.0.1:${GRAFANA_PORT:-3001}:3000"
