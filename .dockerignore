@@ -5,6 +5,7 @@
 .vscode
 node_modules
 **/node_modules
+frontend/dist
 deploy/backups
 deploy/.env
 deploy/.env.*

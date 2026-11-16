@@ -21,6 +21,9 @@ echo "=============================================================="
 echo " PMP 部署验证（入口 ${BASE}）"
 echo "=============================================================="
 
+TMP_PROFILE="$(mktemp)"
+trap 'rm -f "${TMP_PROFILE}"' EXIT
+
 # ---------- 1. 容器健康 ----------
 echo "[1/6] 容器健康状态"
 while read -r svc state health; do
@@ -53,10 +56,24 @@ if [ -n "${over}" ]; then ng "内存占用超过上限 90%：${over}"; else ok "
 echo "[3/6] 前端静态资源"
 code="$(http_code "${BASE}/")"
 [ "${code}" = "200" ] && ok "首页返回 200" || ng "首页返回 ${code}"
-code="$(http_code "${BASE}/assets/app.js")"
-[ "${code}" = "200" ] && ok "静态资源 /assets/app.js 返回 200" || ng "静态资源返回 ${code}"
-body="$(curl -fsS --max-time 10 "${BASE}/" 2>/dev/null | head -c 2000 || true)"
+body="$(curl -fsS --max-time 10 "${BASE}/" 2>/dev/null | head -c 4000 || true)"
 if printf '%s' "${body}" | grep -qi 'PMP'; then ok "首页内容包含平台标识"; else ng "首页内容异常（未匹配到平台标识）"; fi
+
+# 构建产物必须被 index.html 引用且可访问（Vite 产物为带 hash 的 /assets/*.js）
+asset="$(printf '%s' "${body}" | grep -o '/assets/[A-Za-z0-9._-]*\.js' | head -n1 || true)"
+if [ -n "${asset}" ]; then
+  code="$(http_code "${BASE}${asset}")"
+  [ "${code}" = "200" ] && ok "构建产物 ${asset} 返回 200" || ng "构建产物 ${asset} 返回 ${code}"
+else
+  ng "首页未引用 /assets/*.js，前端产物可能不是构建版本"
+fi
+
+ver="$(curl -fsS --max-time 10 "${BASE}/version.json" 2>/dev/null || true)"
+if printf '%s' "${ver}" | tr -d ' \n\r\t' | grep -q '"service":"pmp-frontend"'; then
+  ok "version.json 可访问：$(printf '%s' "${ver}" | tr -d '\n' | head -c 120)"
+else
+  ng "version.json 异常（未匹配到前端版本标识）：$(printf '%s' "${ver}" | head -c 120)"
+fi
 
 # ---------- 4. 健康检查与安全边界 ----------
 echo "[4/6] 健康检查与安全边界"
@@ -64,6 +81,8 @@ resp="$(curl -fsS --max-time 10 "${BASE}/healthz" 2>/dev/null || true)"
 printf '%s' "${resp}" | grep -q 'ok' && ok "GET /healthz -> ok" || ng "GET /healthz 异常：${resp}"
 code="$(http_code "${BASE}/actuator/health")"
 [ "${code}" = "404" ] && ok "外部访问 /actuator/health 已被拦截（404）" || ng "管理端点暴露风险：/actuator/health 返回 ${code}"
+code="$(http_code "${BASE}/api/v1/auth/profile")"
+[ "${code}" = "401" ] && ok "未登录访问受保护接口返回 401" || ng "未登录访问 /api/v1/auth/profile 返回 ${code}（期望 401）"
 
 # ---------- 5. 前后端与中间件链路 ----------
 echo "[5/6] 前后端与中间件链路"
@@ -78,6 +97,31 @@ elif printf '%s' "${resp}" | grep -q '"overall":"DEGRADED"'; then
   ng "依赖连通性异常：${resp}"
 else
   ng "依赖连通性接口无响应：${resp}"
+fi
+
+# 认证闭环：管理员登录签发令牌 -> 携带令牌读取当前用户
+VERIFY_USER="${VERIFY_USERNAME:-admin}"
+VERIFY_PASS="${VERIFY_PASSWORD:-${AUTH_ADMIN_PASSWORD:-Admin@123}}"
+json_escape() { printf '%s' "$1" | sed -e 's/\\/\\\\/g' -e 's/"/\\"/g'; }
+login_body="{\"username\":\"$(json_escape "${VERIFY_USER}")\",\"password\":\"$(json_escape "${VERIFY_PASS}")\"}"
+login_resp="$(curl -sS --max-time 15 -H 'Content-Type: application/json' \
+  -d "${login_body}" "${BASE}/api/v1/auth/login" 2>/dev/null || true)"
+access_token="$(printf '%s' "${login_resp}" | sed -n 's/.*"accessToken":"\([^"]*\)".*/\1/p')"
+if [ -n "${access_token}" ]; then
+  ok "账号 ${VERIFY_USER} 登录成功并签发 accessToken"
+
+  prof_code="$(curl -s -o "${TMP_PROFILE}" -w '%{http_code}' --max-time 15 \
+    -H "Authorization: Bearer ${access_token}" "${BASE}/api/v1/auth/profile" 2>/dev/null || echo 000)"
+  if [ "${prof_code}" = "200" ] && grep -q "\"username\":\"${VERIFY_USER}\"" "${TMP_PROFILE}"; then
+    ok "携带令牌访问 /api/v1/auth/profile 成功（HTTP 200）"
+  else
+    ng "携带令牌访问 /api/v1/auth/profile 失败（HTTP ${prof_code}）：$(head -c 200 "${TMP_PROFILE}" 2>/dev/null || true)"
+  fi
+
+  menus_code="$(http_code_with_token "${BASE}/api/v1/auth/menus" "${access_token}")"
+  [ "${menus_code}" = "200" ] && ok "携带令牌访问 /api/v1/auth/menus 成功（HTTP 200）" || ng "菜单接口异常（HTTP ${menus_code}）"
+else
+  ng "账号 ${VERIFY_USER} 登录失败：$(printf '%s' "${login_resp}" | head -c 200)"
 fi
 
 # ---------- 6. 持久化与自愈（可选） ----------

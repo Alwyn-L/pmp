@@ -1,0 +1,98 @@
+:root {
+  --pmp-primary: #2563eb;
+  --pmp-primary-dark: #1d4ed8;
+  --pmp-sidebar: #0b1220;
+  --pmp-sidebar-soft: #111c30;
+  --pmp-bg: #f4f6fb;
+  --pmp-card: #ffffff;
+  --pmp-text: #0f172a;
+  --pmp-muted: #64748b;
+  --pmp-border: #e5e9f2;
+  --pmp-radius: 10px;
+  --el-color-primary: #2563eb;
+  --el-border-radius-base: 8px;
+  --el-font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  background: var(--pmp-bg);
+  color: var(--pmp-text);
+  font-family: var(--el-font-family);
+  font-size: 14px;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.pmp-page {
+  padding: 16px 20px 24px;
+  min-height: 100%;
+}
+
+.pmp-card {
+  background: var(--pmp-card);
+  border: 1px solid var(--pmp-border);
+  border-radius: var(--pmp-radius);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, .04);
+}
+
+.pmp-title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+.pmp-sub {
+  color: var(--pmp-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.mono {
+  font-family: "JetBrains Mono", Consolas, "Courier New", monospace;
+  font-size: 12.5px;
+}
+
+.pmp-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.pmp-kpi {
+  padding: 14px 16px;
+  border-radius: var(--pmp-radius);
+  background: var(--pmp-card);
+  border: 1px solid var(--pmp-border);
+}
+
+.pmp-kpi .kpi-label { color: var(--pmp-muted); font-size: 12px; }
+.pmp-kpi .kpi-value { font-size: 24px; font-weight: 650; margin: 6px 0 4px; }
+.pmp-kpi .kpi-sub { color: var(--pmp-muted); font-size: 12px; }
+
+.pmp-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.pmp-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.el-table th.el-table__cell { background: #f8fafc; color: #334155; font-weight: 600; }
+
+@media (max-width: 900px) {
+  .pmp-page { padding: 12px; }
+}

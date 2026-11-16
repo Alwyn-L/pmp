@@ -90,3 +90,9 @@ container_health() {
 http_code() {
   curl -s -o /dev/null -w '%{http_code}' --max-time 10 "$1" 2>/dev/null || echo "000"
 }
+
+# 带 Bearer 令牌请求，仅返回 HTTP 状态码
+http_code_with_token() {
+  curl -s -o /dev/null -w '%{http_code}' --max-time 15 \
+    -H "Authorization: Bearer $2" "$1" 2>/dev/null || echo "000"
+}

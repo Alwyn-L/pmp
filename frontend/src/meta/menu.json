@@ -1,0 +1,933 @@
+[
+  {
+    "id": "g-0",
+    "name": "工作台",
+    "icon": "OfficeBuilding",
+    "sort": 1,
+    "items": [
+      {
+        "id": "workbench",
+        "name": "我的工作台",
+        "badge": "",
+        "sort": 1,
+        "roles": [
+          ""
+        ]
+      },
+      {
+        "id": "dashboard",
+        "name": "经营驾驶舱",
+        "badge": "",
+        "sort": 2,
+        "roles": [
+          "exec",
+          "admin",
+          "planner",
+          "fin",
+          "sales"
+        ]
+      },
+      {
+        "id": "todo",
+        "name": "待办中心",
+        "badge": "12",
+        "sort": 3,
+        "roles": [
+          ""
+        ]
+      },
+      {
+        "id": "message",
+        "name": "消息中心",
+        "badge": "8",
+        "sort": 4,
+        "roles": [
+          ""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-1",
+    "name": "研发协同",
+    "icon": "Cpu",
+    "sort": 2,
+    "items": [
+      {
+        "id": "material-apply",
+        "name": "物料申请",
+        "badge": "",
+        "sort": 1,
+        "roles": [
+          "rd",
+          "planner",
+          "mdm",
+          "admin"
+        ]
+      },
+      {
+        "id": "bom",
+        "name": "BOM 管理",
+        "badge": "",
+        "sort": 2,
+        "roles": [
+          "rd",
+          "planner",
+          "prod",
+          "mdm",
+          "admin"
+        ]
+      },
+      {
+        "id": "routing",
+        "name": "工艺路线",
+        "badge": "",
+        "sort": 3,
+        "roles": [
+          "rd",
+          "prod",
+          "qc",
+          "mdm",
+          "admin"
+        ]
+      },
+      {
+        "id": "ecn",
+        "name": "ECN 变更",
+        "badge": "",
+        "sort": 4,
+        "roles": [
+          "rd",
+          "planner",
+          "prod",
+          "qc",
+          "mdm",
+          "admin"
+        ]
+      },
+      {
+        "id": "drawing",
+        "name": "图纸中心",
+        "badge": "",
+        "sort": 5,
+        "roles": [
+          "rd",
+          "prod",
+          "qc",
+          "admin"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-2",
+    "name": "计划",
+    "icon": "Calendar",
+    "sort": 3,
+    "items": [
+      {
+        "id": "forecast",
+        "name": "需求预测",
+        "badge": "",
+        "sort": 1,
+        "roles": [
+          "planner",
+          "exec",
+          "sales",
+          "data",
+          "admin"
+        ]
+      },
+      {
+        "id": "sop",
+        "name": "S&OP 会议",
+        "badge": "",
+        "sort": 2,
+        "roles": [
+          "planner",
+          "exec",
+          "sales",
+          "fin",
+          "admin"
+        ]
+      },
+      {
+        "id": "mps",
+        "name": "主生产计划",
+        "badge": "",
+        "sort": 3,
+        "roles": [
+          "planner",
+          "prod",
+          "admin"
+        ]
+      },
+      {
+        "id": "replenish",
+        "name": "补货计划",
+        "badge": "",
+        "sort": 4,
+        "roles": [
+          "planner",
+          "buyer",
+          "wh",
+          "admin"
+        ]
+      },
+      {
+        "id": "capacity",
+        "name": "产能平衡",
+        "badge": "",
+        "sort": 5,
+        "roles": [
+          "planner",
+          "prod",
+          "admin"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-3",
+    "name": "采购",
+    "icon": "ShoppingCart",
+    "sort": 4,
+    "items": [
+      {
+        "id": "supplier",
+        "name": "供应商管理",
+        "badge": "",
+        "sort": 1,
+        "roles": [
+          "buyer",
+          "mdm",
+          "fin",
+          "qc",
+          "audit",
+          "admin"
+        ]
+      },
+      {
+        "id": "supplier-portal",
+        "name": "供应商门户",
+        "badge": "",
+        "sort": 2,
+        "roles": [
+          "supplier",
+          "buyer",
+          "fin",
+          "admin"
+        ]
+      },
+      {
+        "id": "sourcing",
+        "name": "寻源询价",
+        "badge": "",
+        "sort": 3,
+        "roles": [
+          "buyer",
+          "fin",
+          "admin"
+        ]
+      },
+      {
+        "id": "purchase-req",
+        "name": "采购申请",
+        "badge": "",
+        "sort": 4,
+        "roles": [
+          "buyer",
+          "planner",
+          "wh",
+          "fin",
+          "admin"
+        ]
+      },
+      {
+        "id": "purchase-order",
+        "name": "采购订单",
+        "badge": "",
+        "sort": 5,
+        "roles": [
+          "buyer",
+          "supplier",
+          "wh",
+          "fin",
+          "admin"
+        ]
+      },
+      {
+        "id": "asn",
+        "name": "ASN 收货协同",
+        "badge": "",
+        "sort": 6,
+        "roles": [
+          "buyer",
+          "supplier",
+          "wh",
+          "qc",
+          "admin"
+        ]
+      },
+      {
+        "id": "reconciliation",
+        "name": "三单匹配对账",
+        "badge": "",
+        "sort": 7,
+        "roles": [
+          "buyer",
+          "supplier",
+          "fin",
+          "audit",
+          "admin"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-4",
+    "name": "生产",
+    "icon": "SetUp",
+    "sort": 5,
+    "items": [
+      {
+        "id": "work-order",
+        "name": "工单管理",
+        "badge": "",
+        "sort": 1,
+        "roles": [
+          "prod",
+          "planner",
+          "qc",
+          "admin"
+        ]
+      },
+      {
+        "id": "report-work",
+        "name": "报工管理",
+        "badge": "",
+        "sort": 2,
+        "roles": [
+          "prod",
+          "qc",
+          "planner",
+          "admin"
+        ]
+      },
+      {
+        "id": "quality",
+        "name": "质量管理",
+        "badge": "",
+        "sort": 3,
+        "roles": [
+          "qc",
+          "prod",
+          "buyer",
+          "admin"
+        ]
+      },
+      {
+        "id": "trace",
+        "name": "批次追溯",
+        "badge": "",
+        "sort": 4,
+        "roles": [
+          "qc",
+          "prod",
+          "sales",
+          "admin"
+        ]
+      },
+      {
+        "id": "andon",
+        "name": "安灯异常",
+        "badge": "3",
+        "sort": 5,
+        "roles": [
+          "prod",
+          "qc",
+          "planner",
+          "admin"
+        ]
+      },
+      {
+        "id": "equipment",
+        "name": "设备管理",
+        "badge": "",
+        "sort": 6,
+        "roles": [
+          "prod",
+          "qc",
+          "planner",
+          "admin"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-5",
+    "name": "仓储",
+    "icon": "Box",
+    "sort": 6,
+    "items": [
+      {
+        "id": "inbound",
+        "name": "收货与上架",
+        "badge": "",
+        "sort": 1,
+        "roles": [
+          "wh",
+          "qc",
+          "buyer",
+          "admin"
+        ]
+      },
+      {
+        "id": "outbound",
+        "name": "拣货与发货",
+        "badge": "",
+        "sort": 2,
+        "roles": [
+          "wh",
+          "logi",
+          "sales",
+          "admin"
+        ]
+      },
+      {
+        "id": "stocktake",
+        "name": "盘点管理",
+        "badge": "",
+        "sort": 3,
+        "roles": [
+          "wh",
+          "fin",
+          "audit",
+          "admin"
+        ]
+      },
+      {
+        "id": "inventory",
+        "name": "库存管理",
+        "badge": "",
+        "sort": 4,
+        "roles": [
+          "wh",
+          "planner",
+          "sales",
+          "fin",
+          "buyer",
+          "admin"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-6",
+    "name": "履约",
+    "icon": "Document",
+    "sort": 7,
+    "items": [
+      {
+        "id": "order-pool",
+        "name": "订单池",
+        "badge": "",
+        "sort": 1,
+        "roles": [
+          "sales",
+          "planner",
+          "fin",
+          "admin"
+        ]
+      },
+      {
+        "id": "order-review",
+        "name": "订单审核与分单",
+        "badge": "",
+        "sort": 2,
+        "roles": [
+          "sales",
+          "planner",
+          "fin",
+          "wh",
+          "admin"
+        ]
+      },
+      {
+        "id": "shipment",
+        "name": "发货单",
+        "badge": "",
+        "sort": 3,
+        "roles": [
+          "sales",
+          "wh",
+          "logi",
+          "admin"
+        ]
+      },
+      {
+        "id": "rma",
+        "name": "退换货 RMA",
+        "badge": "",
+        "sort": 4,
+        "roles": [
+          "sales",
+          "wh",
+          "qc",
+          "fin",
+          "admin"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-7",
+    "name": "物流",
+    "icon": "Van",
+    "sort": 8,
+    "items": [
+      {
+        "id": "transport-task",
+        "name": "运输任务",
+        "badge": "",
+        "sort": 1,
+        "roles": [
+          "logi",
+          "wh",
+          "sales",
+          "admin"
+        ]
+      },
+      {
+        "id": "carrier",
+        "name": "承运商与运价",
+        "badge": "",
+        "sort": 2,
+        "roles": [
+          "logi",
+          "buyer",
+          "fin",
+          "admin"
+        ]
+      },
+      {
+        "id": "tracking",
+        "name": "在途与签收",
+        "badge": "",
+        "sort": 3,
+        "roles": [
+          "logi",
+          "sales",
+          "wh",
+          "admin"
+        ]
+      },
+      {
+        "id": "freight",
+        "name": "运费对账",
+        "badge": "",
+        "sort": 4,
+        "roles": [
+          "logi",
+          "fin",
+          "admin"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-8",
+    "name": "客户",
+    "icon": "User",
+    "sort": 9,
+    "items": [
+      {
+        "id": "customer",
+        "name": "客户 360",
+        "badge": "",
+        "sort": 1,
+        "roles": [
+          "sales",
+          "mdm",
+          "fin",
+          "admin"
+        ]
+      },
+      {
+        "id": "customer-portal",
+        "name": "客户门户",
+        "badge": "",
+        "sort": 2,
+        "roles": [
+          "customer",
+          "sales",
+          "fin",
+          "admin"
+        ]
+      },
+      {
+        "id": "sales-order",
+        "name": "销售订单",
+        "badge": "",
+        "sort": 3,
+        "roles": [
+          "sales",
+          "fin",
+          "planner",
+          "admin"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-9",
+    "name": "财务协同",
+    "icon": "Money",
+    "sort": 10,
+    "items": [
+      {
+        "id": "receivable-payable",
+        "name": "应收应付",
+        "badge": "",
+        "sort": 1,
+        "roles": [
+          "fin",
+          "exec",
+          "admin"
+        ]
+      },
+      {
+        "id": "invoice-settlement",
+        "name": "发票与结算",
+        "badge": "",
+        "sort": 2,
+        "roles": [
+          "fin",
+          "buyer",
+          "sales",
+          "audit",
+          "admin"
+        ]
+      },
+      {
+        "id": "cost",
+        "name": "成本核算",
+        "badge": "",
+        "sort": 3,
+        "roles": [
+          "fin",
+          "exec",
+          "prod",
+          "admin"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-10",
+    "name": "数据",
+    "icon": "DataAnalysis",
+    "sort": 11,
+    "items": [
+      {
+        "id": "indicator",
+        "name": "指标平台",
+        "badge": "",
+        "sort": 1,
+        "roles": [
+          "data",
+          "exec",
+          "planner",
+          "fin",
+          "admin"
+        ]
+      },
+      {
+        "id": "bi",
+        "name": "自助报表",
+        "badge": "",
+        "sort": 2,
+        "roles": [
+          "data",
+          "exec",
+          "planner",
+          "fin",
+          "sales",
+          "admin"
+        ]
+      },
+      {
+        "id": "data-quality",
+        "name": "数据质量与血缘",
+        "badge": "",
+        "sort": 3,
+        "roles": [
+          "data",
+          "admin",
+          "audit"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-11",
+    "name": "公共能力",
+    "icon": "Grid",
+    "sort": 12,
+    "items": [
+      {
+        "id": "mdm",
+        "name": "主数据管理",
+        "badge": "",
+        "sort": 1,
+        "roles": [
+          "mdm",
+          "admin",
+          "data",
+          "audit"
+        ]
+      },
+      {
+        "id": "iam",
+        "name": "身份与权限",
+        "badge": "",
+        "sort": 2,
+        "roles": [
+          "admin",
+          "audit",
+          "sre"
+        ]
+      },
+      {
+        "id": "bpm",
+        "name": "流程中心",
+        "badge": "",
+        "sort": 3,
+        "roles": [
+          ""
+        ]
+      },
+      {
+        "id": "file",
+        "name": "文件中心",
+        "badge": "",
+        "sort": 4,
+        "roles": [
+          ""
+        ]
+      },
+      {
+        "id": "coding",
+        "name": "编码规则",
+        "badge": "",
+        "sort": 5,
+        "roles": [
+          "mdm",
+          "admin",
+          "data"
+        ]
+      },
+      {
+        "id": "notify",
+        "name": "通知中心",
+        "badge": "",
+        "sort": 6,
+        "roles": [
+          "admin",
+          "audit"
+        ]
+      },
+      {
+        "id": "audit",
+        "name": "审计日志",
+        "badge": "",
+        "sort": 7,
+        "roles": [
+          "audit",
+          "admin",
+          "sre"
+        ]
+      },
+      {
+        "id": "integration",
+        "name": "集成与接口台账",
+        "badge": "",
+        "sort": 8,
+        "roles": [
+          "admin",
+          "sre",
+          "data",
+          "audit"
+        ]
+      },
+      {
+        "id": "gateway",
+        "name": "API 网关",
+        "badge": "",
+        "sort": 9,
+        "roles": [
+          "sre",
+          "data",
+          "admin"
+        ]
+      },
+      {
+        "id": "event-bus",
+        "name": "消息总线",
+        "badge": "",
+        "sort": 10,
+        "roles": [
+          "sre",
+          "data",
+          "admin"
+        ]
+      },
+      {
+        "id": "rule",
+        "name": "规则引擎",
+        "badge": "",
+        "sort": 11,
+        "roles": [
+          "admin",
+          "planner",
+          "fin"
+        ]
+      },
+      {
+        "id": "scheduler",
+        "name": "调度任务",
+        "badge": "",
+        "sort": 12,
+        "roles": [
+          "admin",
+          "sre",
+          "data"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-12",
+    "name": "运维管控",
+    "icon": "Monitor",
+    "sort": 13,
+    "items": [
+      {
+        "id": "cicd",
+        "name": "CI/CD 与发布",
+        "badge": "",
+        "sort": 1,
+        "roles": [
+          "sre",
+          "admin"
+        ]
+      },
+      {
+        "id": "observability",
+        "name": "监控与 SLO",
+        "badge": "",
+        "sort": 2,
+        "roles": [
+          "sre",
+          "admin",
+          "audit"
+        ]
+      },
+      {
+        "id": "config",
+        "name": "配置与密钥",
+        "badge": "",
+        "sort": 3,
+        "roles": [
+          "sre",
+          "admin"
+        ]
+      },
+      {
+        "id": "resource",
+        "name": "资源与成本",
+        "badge": "",
+        "sort": 4,
+        "roles": [
+          "sre",
+          "admin",
+          "exec"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-13",
+    "name": "系统管理",
+    "icon": "Setting",
+    "sort": 14,
+    "items": [
+      {
+        "id": "org",
+        "name": "组织与岗位",
+        "badge": "",
+        "sort": 1,
+        "roles": [
+          "admin",
+          "mdm",
+          "audit"
+        ]
+      },
+      {
+        "id": "dict-param",
+        "name": "字典与参数",
+        "badge": "",
+        "sort": 2,
+        "roles": [
+          "admin",
+          "data"
+        ]
+      },
+      {
+        "id": "tenant-menu",
+        "name": "租户与菜单",
+        "badge": "",
+        "sort": 3,
+        "roles": [
+          "admin",
+          "sre"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-14",
+    "name": "帮助与异常",
+    "icon": "QuestionFilled",
+    "sort": 15,
+    "items": [
+      {
+        "id": "search",
+        "name": "全局搜索",
+        "badge": "",
+        "sort": 1,
+        "roles": [
+          ""
+        ]
+      },
+      {
+        "id": "profile",
+        "name": "个人中心",
+        "badge": "",
+        "sort": 2,
+        "roles": [
+          ""
+        ]
+      },
+      {
+        "id": "error",
+        "name": "异常提示页",
+        "badge": "",
+        "sort": 3,
+        "roles": [
+          ""
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,3785 @@
+{
+  "generatedAt": "2026-11-12",
+  "pages": [
+    {
+      "pageId": "todo",
+      "table": "biz_todo",
+      "module": "工作台",
+      "title": "待办中心",
+      "columns": [
+        {
+          "key": "code",
+          "label": "待办编号",
+          "type": "mono"
+        },
+        {
+          "key": "title",
+          "label": "标题",
+          "type": "text"
+        },
+        {
+          "key": "biz",
+          "label": "业务类型",
+          "type": "text"
+        },
+        {
+          "key": "from",
+          "label": "来源系统",
+          "type": "text"
+        },
+        {
+          "key": "urgent",
+          "label": "紧急度",
+          "type": "tag"
+        },
+        {
+          "key": "time",
+          "label": "到达时间",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "to",
+          "label": "当前处理人",
+          "type": "text"
+        },
+        {
+          "key": "result",
+          "label": "处理结果",
+          "type": "tag"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "title",
+        "biz",
+        "from"
+      ]
+    },
+    {
+      "pageId": "message",
+      "table": "biz_message",
+      "module": "工作台",
+      "title": "消息中心",
+      "columns": [
+        {
+          "key": "title",
+          "label": "消息标题",
+          "type": "text"
+        },
+        {
+          "key": "type",
+          "label": "类型",
+          "type": "tag"
+        },
+        {
+          "key": "channel",
+          "label": "渠道",
+          "type": "text"
+        },
+        {
+          "key": "time",
+          "label": "时间",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        }
+      ],
+      "searchColumns": [
+        "title",
+        "channel",
+        "time"
+      ]
+    },
+    {
+      "pageId": "material-apply",
+      "table": "biz_material_apply",
+      "module": "研发协同",
+      "title": "物料申请",
+      "columns": [
+        {
+          "key": "code",
+          "label": "临时码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "物料名称",
+          "type": "text"
+        },
+        {
+          "key": "type",
+          "label": "物料类型",
+          "type": "text"
+        },
+        {
+          "key": "spec",
+          "label": "规格型号",
+          "type": "text"
+        },
+        {
+          "key": "applicant",
+          "label": "申请人",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "time",
+          "label": "申请时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "type",
+        "spec"
+      ]
+    },
+    {
+      "pageId": "bom",
+      "table": "biz_bom",
+      "module": "研发协同",
+      "title": "BOM 管理",
+      "columns": [
+        {
+          "key": "code",
+          "label": "BOM 编码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "物料名称",
+          "type": "text"
+        },
+        {
+          "key": "type",
+          "label": "类型",
+          "type": "tag"
+        },
+        {
+          "key": "ver",
+          "label": "版本",
+          "type": "mono"
+        },
+        {
+          "key": "qty",
+          "label": "层级",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "owner",
+          "label": "负责人",
+          "type": "text"
+        },
+        {
+          "key": "updated",
+          "label": "更新时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "ver",
+        "qty"
+      ]
+    },
+    {
+      "pageId": "routing",
+      "table": "biz_routing",
+      "module": "研发协同",
+      "title": "工艺路线",
+      "columns": [
+        {
+          "key": "code",
+          "label": "工艺编码",
+          "type": "mono"
+        },
+        {
+          "key": "material",
+          "label": "物料编码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "工艺名称",
+          "type": "text"
+        },
+        {
+          "key": "steps",
+          "label": "工序数",
+          "type": "text"
+        },
+        {
+          "key": "center",
+          "label": "工作中心",
+          "type": "text"
+        },
+        {
+          "key": "std",
+          "label": "标准工时",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "ver",
+          "label": "版本",
+          "type": "mono"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "material",
+        "name",
+        "steps"
+      ]
+    },
+    {
+      "pageId": "ecn",
+      "table": "biz_ecn",
+      "module": "研发协同",
+      "title": "ECN 工程变更",
+      "columns": [
+        {
+          "key": "code",
+          "label": "ECN 编号",
+          "type": "mono"
+        },
+        {
+          "key": "title",
+          "label": "变更标题",
+          "type": "text"
+        },
+        {
+          "key": "type",
+          "label": "类型",
+          "type": "text"
+        },
+        {
+          "key": "scope",
+          "label": "影响范围",
+          "type": "text"
+        },
+        {
+          "key": "owner",
+          "label": "申请人",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "time",
+          "label": "提交时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "title",
+        "type",
+        "scope"
+      ]
+    },
+    {
+      "pageId": "drawing",
+      "table": "biz_drawing",
+      "module": "研发协同",
+      "title": "图纸中心",
+      "columns": [
+        {
+          "key": "code",
+          "label": "图纸编号",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "图纸名称",
+          "type": "text"
+        },
+        {
+          "key": "type",
+          "label": "类型",
+          "type": "text"
+        },
+        {
+          "key": "ver",
+          "label": "版本",
+          "type": "mono"
+        },
+        {
+          "key": "material",
+          "label": "关联物料",
+          "type": "mono"
+        },
+        {
+          "key": "owner",
+          "label": "上传人",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "time",
+          "label": "更新时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "type",
+        "ver"
+      ]
+    },
+    {
+      "pageId": "forecast",
+      "table": "biz_forecast",
+      "module": "计划",
+      "title": "需求预测",
+      "columns": [
+        {
+          "key": "code",
+          "label": "物料编码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "物料名称",
+          "type": "text"
+        },
+        {
+          "key": "period",
+          "label": "预测周期",
+          "type": "text"
+        },
+        {
+          "key": "qty",
+          "label": "预测数量",
+          "type": "text"
+        },
+        {
+          "key": "actual",
+          "label": "实际销量",
+          "type": "text"
+        },
+        {
+          "key": "acc",
+          "label": "准确率",
+          "type": "text"
+        },
+        {
+          "key": "ver",
+          "label": "版本",
+          "type": "mono"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "period",
+        "qty"
+      ]
+    },
+    {
+      "pageId": "sop",
+      "table": "biz_sop",
+      "module": "计划",
+      "title": "S&OP 会议",
+      "columns": [
+        {
+          "key": "code",
+          "label": "会议编号",
+          "type": "mono"
+        },
+        {
+          "key": "period",
+          "label": "周期",
+          "type": "text"
+        },
+        {
+          "key": "topic",
+          "label": "议题",
+          "type": "text"
+        },
+        {
+          "key": "attendee",
+          "label": "参与方",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "time",
+          "label": "会议时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "period",
+        "topic",
+        "attendee"
+      ]
+    },
+    {
+      "pageId": "mps",
+      "table": "biz_mps",
+      "module": "计划",
+      "title": "主生产计划",
+      "columns": [
+        {
+          "key": "code",
+          "label": "计划编号",
+          "type": "mono"
+        },
+        {
+          "key": "material",
+          "label": "物料",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "物料名称",
+          "type": "text"
+        },
+        {
+          "key": "line",
+          "label": "产线",
+          "type": "text"
+        },
+        {
+          "key": "plan",
+          "label": "计划量",
+          "type": "text"
+        },
+        {
+          "key": "start",
+          "label": "开工日",
+          "type": "text"
+        },
+        {
+          "key": "end",
+          "label": "完工日",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "kit",
+          "label": "齐套率",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "material",
+        "name",
+        "line"
+      ]
+    },
+    {
+      "pageId": "replenish",
+      "table": "biz_replenish",
+      "module": "计划",
+      "title": "补货计划",
+      "columns": [
+        {
+          "key": "code",
+          "label": "物料编码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "物料名称",
+          "type": "text"
+        },
+        {
+          "key": "stock",
+          "label": "当前库存",
+          "type": "text"
+        },
+        {
+          "key": "safe",
+          "label": "安全库存",
+          "type": "text"
+        },
+        {
+          "key": "gap",
+          "label": "缺口",
+          "type": "text"
+        },
+        {
+          "key": "type",
+          "label": "补货方式",
+          "type": "text"
+        },
+        {
+          "key": "urgent",
+          "label": "紧急度",
+          "type": "tag"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "stock",
+        "safe"
+      ]
+    },
+    {
+      "pageId": "capacity",
+      "table": "biz_capacity",
+      "module": "计划",
+      "title": "产能平衡",
+      "columns": [
+        {
+          "key": "center",
+          "label": "工作中心",
+          "type": "text"
+        },
+        {
+          "key": "period",
+          "label": "周期",
+          "type": "text"
+        },
+        {
+          "key": "capacity",
+          "label": "可用产能",
+          "type": "text"
+        },
+        {
+          "key": "load",
+          "label": "负荷",
+          "type": "text"
+        },
+        {
+          "key": "rate",
+          "label": "负荷率",
+          "type": "text"
+        },
+        {
+          "key": "bottle",
+          "label": "瓶颈工序",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "advice",
+          "label": "建议",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "center",
+        "period",
+        "capacity",
+        "load"
+      ]
+    },
+    {
+      "pageId": "supplier",
+      "table": "biz_supplier",
+      "module": "采购",
+      "title": "供应商管理",
+      "columns": [
+        {
+          "key": "code",
+          "label": "供应商编码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "供应商名称",
+          "type": "text"
+        },
+        {
+          "key": "cat",
+          "label": "品类",
+          "type": "text"
+        },
+        {
+          "key": "level",
+          "label": "等级",
+          "type": "tag"
+        },
+        {
+          "key": "score",
+          "label": "绩效分",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "owner",
+          "label": "采购负责人",
+          "type": "text"
+        },
+        {
+          "key": "stage",
+          "label": "准入阶段",
+          "type": "text"
+        },
+        {
+          "key": "submit",
+          "label": "提交时间",
+          "type": "text"
+        },
+        {
+          "key": "quality",
+          "label": "质量分",
+          "type": "text"
+        },
+        {
+          "key": "delivery",
+          "label": "交付分",
+          "type": "text"
+        },
+        {
+          "key": "cost",
+          "label": "成本分",
+          "type": "text"
+        },
+        {
+          "key": "service",
+          "label": "服务分",
+          "type": "text"
+        },
+        {
+          "key": "total",
+          "label": "总分",
+          "type": "text"
+        },
+        {
+          "key": "period",
+          "label": "周期",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "cat",
+        "score"
+      ]
+    },
+    {
+      "pageId": "supplier-portal",
+      "table": "biz_supplier_portal",
+      "module": "采购",
+      "title": "供应商门户",
+      "columns": [
+        {
+          "key": "code",
+          "label": "订单号",
+          "type": "mono"
+        },
+        {
+          "key": "material",
+          "label": "物料",
+          "type": "text"
+        },
+        {
+          "key": "qty",
+          "label": "数量",
+          "type": "text"
+        },
+        {
+          "key": "price",
+          "label": "单价",
+          "type": "text"
+        },
+        {
+          "key": "delivery",
+          "label": "要求交期",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "time",
+          "label": "下单时间",
+          "type": "text"
+        },
+        {
+          "key": "order",
+          "label": "订单号",
+          "type": "mono"
+        },
+        {
+          "key": "carton",
+          "label": "箱数",
+          "type": "text"
+        },
+        {
+          "key": "carrier",
+          "label": "承运商",
+          "type": "text"
+        },
+        {
+          "key": "eta",
+          "label": "预计到货",
+          "type": "text"
+        },
+        {
+          "key": "period",
+          "label": "账期",
+          "type": "text"
+        },
+        {
+          "key": "amount",
+          "label": "对账金额",
+          "type": "text"
+        },
+        {
+          "key": "invoice",
+          "label": "发票状态",
+          "type": "tag"
+        },
+        {
+          "key": "item",
+          "label": "资料项",
+          "type": "text"
+        },
+        {
+          "key": "value",
+          "label": "内容",
+          "type": "text"
+        },
+        {
+          "key": "expire",
+          "label": "有效期",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "material",
+        "qty",
+        "price"
+      ]
+    },
+    {
+      "pageId": "sourcing",
+      "table": "biz_sourcing",
+      "module": "采购",
+      "title": "寻源询价",
+      "columns": [
+        {
+          "key": "code",
+          "label": "询价单号",
+          "type": "mono"
+        },
+        {
+          "key": "title",
+          "label": "询价标题",
+          "type": "text"
+        },
+        {
+          "key": "material",
+          "label": "物料",
+          "type": "mono"
+        },
+        {
+          "key": "qty",
+          "label": "数量",
+          "type": "text"
+        },
+        {
+          "key": "quotes",
+          "label": "报价家数",
+          "type": "text"
+        },
+        {
+          "key": "deadline",
+          "label": "截止时间",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "owner",
+          "label": "采购员",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "title",
+        "material",
+        "qty"
+      ]
+    },
+    {
+      "pageId": "purchase-req",
+      "table": "biz_purchase_req",
+      "module": "采购",
+      "title": "采购申请",
+      "columns": [
+        {
+          "key": "code",
+          "label": "申请单号",
+          "type": "mono"
+        },
+        {
+          "key": "material",
+          "label": "物料",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "物料名称",
+          "type": "text"
+        },
+        {
+          "key": "qty",
+          "label": "数量",
+          "type": "text"
+        },
+        {
+          "key": "demand",
+          "label": "需求日期",
+          "type": "text"
+        },
+        {
+          "key": "dept",
+          "label": "申请部门",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "owner",
+          "label": "申请人",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "material",
+        "name",
+        "qty"
+      ]
+    },
+    {
+      "pageId": "purchase-order",
+      "table": "biz_purchase_order",
+      "module": "采购",
+      "title": "采购订单",
+      "columns": [
+        {
+          "key": "code",
+          "label": "订单号",
+          "type": "mono"
+        },
+        {
+          "key": "supplier",
+          "label": "供应商",
+          "type": "text"
+        },
+        {
+          "key": "material",
+          "label": "物料",
+          "type": "mono"
+        },
+        {
+          "key": "qty",
+          "label": "数量",
+          "type": "text"
+        },
+        {
+          "key": "amount",
+          "label": "金额(元)",
+          "type": "text"
+        },
+        {
+          "key": "delivery",
+          "label": "交期",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "owner",
+          "label": "采购员",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "supplier",
+        "material",
+        "qty"
+      ]
+    },
+    {
+      "pageId": "asn",
+      "table": "biz_asn",
+      "module": "采购",
+      "title": "ASN 收货协同",
+      "columns": [
+        {
+          "key": "code",
+          "label": "ASN 单号",
+          "type": "mono"
+        },
+        {
+          "key": "po",
+          "label": "采购订单",
+          "type": "mono"
+        },
+        {
+          "key": "supplier",
+          "label": "供应商",
+          "type": "text"
+        },
+        {
+          "key": "qty",
+          "label": "发货数量",
+          "type": "text"
+        },
+        {
+          "key": "eta",
+          "label": "预计到货",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "qc",
+          "label": "质检结果",
+          "type": "tag"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "po",
+        "supplier",
+        "qty"
+      ]
+    },
+    {
+      "pageId": "reconciliation",
+      "table": "biz_reconciliation",
+      "module": "采购",
+      "title": "三单匹配对账",
+      "columns": [
+        {
+          "key": "code",
+          "label": "对账单号",
+          "type": "mono"
+        },
+        {
+          "key": "supplier",
+          "label": "供应商",
+          "type": "text"
+        },
+        {
+          "key": "period",
+          "label": "对账周期",
+          "type": "text"
+        },
+        {
+          "key": "amount",
+          "label": "对账金额",
+          "type": "text"
+        },
+        {
+          "key": "diff",
+          "label": "差异金额",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "owner",
+          "label": "采购员",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "supplier",
+        "period",
+        "amount"
+      ]
+    },
+    {
+      "pageId": "work-order",
+      "table": "biz_work_order",
+      "module": "生产",
+      "title": "工单管理",
+      "columns": [
+        {
+          "key": "code",
+          "label": "工单号",
+          "type": "mono"
+        },
+        {
+          "key": "material",
+          "label": "物料",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "产品名称",
+          "type": "text"
+        },
+        {
+          "key": "line",
+          "label": "产线",
+          "type": "text"
+        },
+        {
+          "key": "plan",
+          "label": "计划量",
+          "type": "text"
+        },
+        {
+          "key": "done",
+          "label": "完成量",
+          "type": "text"
+        },
+        {
+          "key": "progress",
+          "label": "进度",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "priority",
+          "label": "优先级",
+          "type": "tag"
+        },
+        {
+          "key": "step",
+          "label": "工序",
+          "type": "text"
+        },
+        {
+          "key": "center",
+          "label": "工作中心",
+          "type": "text"
+        },
+        {
+          "key": "worker",
+          "label": "操作工",
+          "type": "text"
+        },
+        {
+          "key": "start",
+          "label": "计划开工",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "material",
+        "name",
+        "line"
+      ]
+    },
+    {
+      "pageId": "report-work",
+      "table": "biz_report_work",
+      "module": "生产",
+      "title": "报工管理",
+      "columns": [
+        {
+          "key": "code",
+          "label": "报工单号",
+          "type": "mono"
+        },
+        {
+          "key": "wo",
+          "label": "工单号",
+          "type": "mono"
+        },
+        {
+          "key": "step",
+          "label": "工序",
+          "type": "text"
+        },
+        {
+          "key": "good",
+          "label": "良品数",
+          "type": "text"
+        },
+        {
+          "key": "bad",
+          "label": "不良数",
+          "type": "text"
+        },
+        {
+          "key": "hours",
+          "label": "工时",
+          "type": "text"
+        },
+        {
+          "key": "worker",
+          "label": "报工人",
+          "type": "text"
+        },
+        {
+          "key": "time",
+          "label": "报工时间",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "wo",
+        "step",
+        "good"
+      ]
+    },
+    {
+      "pageId": "quality",
+      "table": "biz_quality",
+      "module": "生产",
+      "title": "质量管理",
+      "columns": [
+        {
+          "key": "code",
+          "label": "检验单号",
+          "type": "mono"
+        },
+        {
+          "key": "type",
+          "label": "检验类型",
+          "type": "text"
+        },
+        {
+          "key": "ref",
+          "label": "关联单据",
+          "type": "mono"
+        },
+        {
+          "key": "material",
+          "label": "物料",
+          "type": "mono"
+        },
+        {
+          "key": "sample",
+          "label": "抽样数",
+          "type": "text"
+        },
+        {
+          "key": "result",
+          "label": "结果",
+          "type": "tag"
+        },
+        {
+          "key": "inspector",
+          "label": "检验员",
+          "type": "text"
+        },
+        {
+          "key": "time",
+          "label": "检验时间",
+          "type": "text"
+        },
+        {
+          "key": "source",
+          "label": "来源",
+          "type": "text"
+        },
+        {
+          "key": "defect",
+          "label": "缺陷描述",
+          "type": "text"
+        },
+        {
+          "key": "qty",
+          "label": "数量",
+          "type": "text"
+        },
+        {
+          "key": "disposal",
+          "label": "处置方式",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "type",
+        "ref",
+        "material"
+      ]
+    },
+    {
+      "pageId": "trace",
+      "table": "biz_trace",
+      "module": "生产",
+      "title": "批次追溯",
+      "columns": [
+        {
+          "key": "batch",
+          "label": "批次号",
+          "type": "mono"
+        },
+        {
+          "key": "material",
+          "label": "物料",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "物料名称",
+          "type": "text"
+        },
+        {
+          "key": "supplier",
+          "label": "供应商",
+          "type": "text"
+        },
+        {
+          "key": "wo",
+          "label": "来源工单",
+          "type": "mono"
+        },
+        {
+          "key": "qc",
+          "label": "检验结果",
+          "type": "tag"
+        },
+        {
+          "key": "to",
+          "label": "当前去向",
+          "type": "text"
+        },
+        {
+          "key": "time",
+          "label": "入库时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "batch",
+        "material",
+        "name",
+        "supplier"
+      ]
+    },
+    {
+      "pageId": "equipment",
+      "table": "biz_equipment",
+      "module": "生产",
+      "title": "设备管理",
+      "columns": [
+        {
+          "key": "code",
+          "label": "设备编码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "设备名称",
+          "type": "text"
+        },
+        {
+          "key": "type",
+          "label": "类型",
+          "type": "text"
+        },
+        {
+          "key": "line",
+          "label": "产线",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "oee",
+          "label": "OEE",
+          "type": "text"
+        },
+        {
+          "key": "owner",
+          "label": "责任人",
+          "type": "text"
+        },
+        {
+          "key": "equip",
+          "label": "设备",
+          "type": "mono"
+        },
+        {
+          "key": "plan",
+          "label": "保养计划",
+          "type": "text"
+        },
+        {
+          "key": "cycle",
+          "label": "周期",
+          "type": "text"
+        },
+        {
+          "key": "last",
+          "label": "上次执行",
+          "type": "text"
+        },
+        {
+          "key": "next",
+          "label": "下次到期",
+          "type": "text"
+        },
+        {
+          "key": "fault",
+          "label": "故障现象",
+          "type": "text"
+        },
+        {
+          "key": "level",
+          "label": "等级",
+          "type": "tag"
+        },
+        {
+          "key": "down",
+          "label": "停机时长",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "type",
+        "line"
+      ]
+    },
+    {
+      "pageId": "inbound",
+      "table": "biz_inbound",
+      "module": "仓储",
+      "title": "收货与上架",
+      "columns": [
+        {
+          "key": "code",
+          "label": "收货单号",
+          "type": "mono"
+        },
+        {
+          "key": "asn",
+          "label": "ASN 单号",
+          "type": "mono"
+        },
+        {
+          "key": "supplier",
+          "label": "供应商",
+          "type": "text"
+        },
+        {
+          "key": "qty",
+          "label": "应收数",
+          "type": "text"
+        },
+        {
+          "key": "recv",
+          "label": "已收数",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "dock",
+          "label": "月台",
+          "type": "text"
+        },
+        {
+          "key": "time",
+          "label": "预约时间",
+          "type": "text"
+        },
+        {
+          "key": "material",
+          "label": "物料",
+          "type": "mono"
+        },
+        {
+          "key": "batch",
+          "label": "批次",
+          "type": "mono"
+        },
+        {
+          "key": "from",
+          "label": "暂存位",
+          "type": "text"
+        },
+        {
+          "key": "to",
+          "label": "目标库位",
+          "type": "text"
+        },
+        {
+          "key": "owner",
+          "label": "作业员",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "asn",
+        "supplier",
+        "qty"
+      ]
+    },
+    {
+      "pageId": "outbound",
+      "table": "biz_outbound",
+      "module": "仓储",
+      "title": "拣货与发货",
+      "columns": [
+        {
+          "key": "code",
+          "label": "拣货单号",
+          "type": "mono"
+        },
+        {
+          "key": "wave",
+          "label": "波次",
+          "type": "text"
+        },
+        {
+          "key": "order",
+          "label": "订单数",
+          "type": "text"
+        },
+        {
+          "key": "sku",
+          "label": "SKU 数",
+          "type": "text"
+        },
+        {
+          "key": "qty",
+          "label": "件数",
+          "type": "text"
+        },
+        {
+          "key": "zone",
+          "label": "库区",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "owner",
+          "label": "拣货员",
+          "type": "text"
+        },
+        {
+          "key": "carrier",
+          "label": "承运商",
+          "type": "text"
+        },
+        {
+          "key": "weight",
+          "label": "重量",
+          "type": "text"
+        },
+        {
+          "key": "time",
+          "label": "发货时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "wave",
+        "order",
+        "sku"
+      ]
+    },
+    {
+      "pageId": "stocktake",
+      "table": "biz_stocktake",
+      "module": "仓储",
+      "title": "盘点管理",
+      "columns": [
+        {
+          "key": "code",
+          "label": "盘点单号",
+          "type": "mono"
+        },
+        {
+          "key": "wh",
+          "label": "仓库",
+          "type": "text"
+        },
+        {
+          "key": "type",
+          "label": "盘点类型",
+          "type": "text"
+        },
+        {
+          "key": "scope",
+          "label": "范围",
+          "type": "text"
+        },
+        {
+          "key": "diff",
+          "label": "差异项",
+          "type": "text"
+        },
+        {
+          "key": "amount",
+          "label": "差异金额",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "owner",
+          "label": "负责人",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "wh",
+        "type",
+        "scope"
+      ]
+    },
+    {
+      "pageId": "inventory",
+      "table": "biz_inventory",
+      "module": "仓储",
+      "title": "库存管理",
+      "columns": [
+        {
+          "key": "material",
+          "label": "物料编码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "物料名称",
+          "type": "text"
+        },
+        {
+          "key": "wh",
+          "label": "仓库",
+          "type": "text"
+        },
+        {
+          "key": "loc",
+          "label": "库位",
+          "type": "text"
+        },
+        {
+          "key": "batch",
+          "label": "批次",
+          "type": "mono"
+        },
+        {
+          "key": "qty",
+          "label": "实物库存",
+          "type": "text"
+        },
+        {
+          "key": "lock",
+          "label": "锁定",
+          "type": "text"
+        },
+        {
+          "key": "available",
+          "label": "可用",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "age",
+          "label": "库龄",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "material",
+        "name",
+        "wh",
+        "loc"
+      ]
+    },
+    {
+      "pageId": "order-pool",
+      "table": "biz_order_pool",
+      "module": "履约",
+      "title": "订单池",
+      "columns": [
+        {
+          "key": "code",
+          "label": "订单号",
+          "type": "mono"
+        },
+        {
+          "key": "channel",
+          "label": "渠道",
+          "type": "text"
+        },
+        {
+          "key": "customer",
+          "label": "客户",
+          "type": "text"
+        },
+        {
+          "key": "amount",
+          "label": "金额",
+          "type": "text"
+        },
+        {
+          "key": "items",
+          "label": "商品数",
+          "type": "text"
+        },
+        {
+          "key": "priority",
+          "label": "优先级",
+          "type": "tag"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "time",
+          "label": "下单时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "channel",
+        "customer",
+        "amount"
+      ]
+    },
+    {
+      "pageId": "order-review",
+      "table": "biz_order_review",
+      "module": "履约",
+      "title": "订单审核与分单",
+      "columns": [
+        {
+          "key": "code",
+          "label": "订单号",
+          "type": "mono"
+        },
+        {
+          "key": "customer",
+          "label": "客户",
+          "type": "text"
+        },
+        {
+          "key": "amount",
+          "label": "金额",
+          "type": "text"
+        },
+        {
+          "key": "credit",
+          "label": "信用校验",
+          "type": "tag"
+        },
+        {
+          "key": "stock",
+          "label": "库存分配",
+          "type": "tag"
+        },
+        {
+          "key": "warehouse",
+          "label": "分仓",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "time",
+          "label": "审核时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "customer",
+        "amount",
+        "warehouse"
+      ]
+    },
+    {
+      "pageId": "shipment",
+      "table": "biz_shipment",
+      "module": "履约",
+      "title": "发货单",
+      "columns": [
+        {
+          "key": "code",
+          "label": "发货单号",
+          "type": "mono"
+        },
+        {
+          "key": "order",
+          "label": "订单号",
+          "type": "mono"
+        },
+        {
+          "key": "customer",
+          "label": "客户",
+          "type": "text"
+        },
+        {
+          "key": "warehouse",
+          "label": "仓库",
+          "type": "text"
+        },
+        {
+          "key": "qty",
+          "label": "件数",
+          "type": "text"
+        },
+        {
+          "key": "carrier",
+          "label": "承运商",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "time",
+          "label": "发货时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "order",
+        "customer",
+        "warehouse"
+      ]
+    },
+    {
+      "pageId": "rma",
+      "table": "biz_rma",
+      "module": "履约",
+      "title": "退换货 RMA",
+      "columns": [
+        {
+          "key": "code",
+          "label": "RMA 单号",
+          "type": "mono"
+        },
+        {
+          "key": "order",
+          "label": "原订单号",
+          "type": "mono"
+        },
+        {
+          "key": "customer",
+          "label": "客户",
+          "type": "text"
+        },
+        {
+          "key": "type",
+          "label": "类型",
+          "type": "text"
+        },
+        {
+          "key": "qty",
+          "label": "数量",
+          "type": "text"
+        },
+        {
+          "key": "reason",
+          "label": "退货原因",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "time",
+          "label": "申请时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "order",
+        "customer",
+        "type"
+      ]
+    },
+    {
+      "pageId": "transport-task",
+      "table": "biz_transport_task",
+      "module": "物流",
+      "title": "运输任务",
+      "columns": [
+        {
+          "key": "code",
+          "label": "运输单号",
+          "type": "mono"
+        },
+        {
+          "key": "shipment",
+          "label": "发货单号",
+          "type": "mono"
+        },
+        {
+          "key": "mode",
+          "label": "模式",
+          "type": "text"
+        },
+        {
+          "key": "from",
+          "label": "起运地",
+          "type": "text"
+        },
+        {
+          "key": "to",
+          "label": "目的地",
+          "type": "text"
+        },
+        {
+          "key": "carrier",
+          "label": "承运商",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "eta",
+          "label": "预计到达",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "shipment",
+        "mode",
+        "from"
+      ]
+    },
+    {
+      "pageId": "carrier",
+      "table": "biz_carrier",
+      "module": "物流",
+      "title": "承运商与运价",
+      "columns": [
+        {
+          "key": "code",
+          "label": "承运商编码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "承运商名称",
+          "type": "text"
+        },
+        {
+          "key": "mode",
+          "label": "覆盖模式",
+          "type": "text"
+        },
+        {
+          "key": "lines",
+          "label": "覆盖线路",
+          "type": "text"
+        },
+        {
+          "key": "level",
+          "label": "评级",
+          "type": "tag"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "carrier",
+          "label": "承运商",
+          "type": "text"
+        },
+        {
+          "key": "line",
+          "label": "线路",
+          "type": "text"
+        },
+        {
+          "key": "price",
+          "label": "单价",
+          "type": "text"
+        },
+        {
+          "key": "valid",
+          "label": "有效期",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "mode",
+        "lines"
+      ]
+    },
+    {
+      "pageId": "tracking",
+      "table": "biz_tracking",
+      "module": "物流",
+      "title": "在途与签收",
+      "columns": [
+        {
+          "key": "code",
+          "label": "运单号",
+          "type": "mono"
+        },
+        {
+          "key": "carrier",
+          "label": "承运商",
+          "type": "text"
+        },
+        {
+          "key": "route",
+          "label": "线路",
+          "type": "text"
+        },
+        {
+          "key": "node",
+          "label": "当前节点",
+          "type": "text"
+        },
+        {
+          "key": "progress",
+          "label": "进度",
+          "type": "text"
+        },
+        {
+          "key": "eta",
+          "label": "预计到达",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "order",
+          "label": "订单号",
+          "type": "mono"
+        },
+        {
+          "key": "receiver",
+          "label": "签收人",
+          "type": "text"
+        },
+        {
+          "key": "sign",
+          "label": "签收时间",
+          "type": "text"
+        },
+        {
+          "key": "type",
+          "label": "签收方式",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "carrier",
+        "route",
+        "node"
+      ]
+    },
+    {
+      "pageId": "freight",
+      "table": "biz_freight",
+      "module": "物流",
+      "title": "运费对账",
+      "columns": [
+        {
+          "key": "code",
+          "label": "对账单号",
+          "type": "mono"
+        },
+        {
+          "key": "carrier",
+          "label": "承运商",
+          "type": "text"
+        },
+        {
+          "key": "period",
+          "label": "账期",
+          "type": "text"
+        },
+        {
+          "key": "bills",
+          "label": "运单数",
+          "type": "text"
+        },
+        {
+          "key": "amount",
+          "label": "账单金额",
+          "type": "text"
+        },
+        {
+          "key": "diff",
+          "label": "差异",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "owner",
+          "label": "对账人",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "carrier",
+        "period",
+        "bills"
+      ]
+    },
+    {
+      "pageId": "customer",
+      "table": "biz_customer",
+      "module": "客户",
+      "title": "客户 360",
+      "columns": [
+        {
+          "key": "code",
+          "label": "客户编码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "客户名称",
+          "type": "text"
+        },
+        {
+          "key": "level",
+          "label": "客户等级",
+          "type": "tag"
+        },
+        {
+          "key": "channel",
+          "label": "渠道",
+          "type": "text"
+        },
+        {
+          "key": "credit",
+          "label": "信用额度",
+          "type": "text"
+        },
+        {
+          "key": "used",
+          "label": "已用额度",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "customer",
+          "label": "客户",
+          "type": "text"
+        },
+        {
+          "key": "amount",
+          "label": "预计金额",
+          "type": "text"
+        },
+        {
+          "key": "stage",
+          "label": "阶段",
+          "type": "text"
+        },
+        {
+          "key": "prob",
+          "label": "赢单率",
+          "type": "text"
+        },
+        {
+          "key": "owner",
+          "label": "销售",
+          "type": "text"
+        },
+        {
+          "key": "type",
+          "label": "服务类型",
+          "type": "text"
+        },
+        {
+          "key": "issue",
+          "label": "问题描述",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "channel",
+        "credit"
+      ]
+    },
+    {
+      "pageId": "customer-portal",
+      "table": "biz_customer_portal",
+      "module": "客户",
+      "title": "客户门户",
+      "columns": [
+        {
+          "key": "code",
+          "label": "订单号",
+          "type": "mono"
+        },
+        {
+          "key": "product",
+          "label": "产品",
+          "type": "text"
+        },
+        {
+          "key": "qty",
+          "label": "数量",
+          "type": "text"
+        },
+        {
+          "key": "amount",
+          "label": "金额",
+          "type": "text"
+        },
+        {
+          "key": "delivery",
+          "label": "承诺交期",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "order",
+          "label": "订单号",
+          "type": "mono"
+        },
+        {
+          "key": "carrier",
+          "label": "承运商",
+          "type": "text"
+        },
+        {
+          "key": "node",
+          "label": "当前节点",
+          "type": "text"
+        },
+        {
+          "key": "eta",
+          "label": "预计送达",
+          "type": "text"
+        },
+        {
+          "key": "period",
+          "label": "账期",
+          "type": "text"
+        },
+        {
+          "key": "invoice",
+          "label": "发票",
+          "type": "tag"
+        },
+        {
+          "key": "issue",
+          "label": "问题描述",
+          "type": "text"
+        },
+        {
+          "key": "submit",
+          "label": "提交时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "product",
+        "qty",
+        "amount"
+      ]
+    },
+    {
+      "pageId": "sales-order",
+      "table": "biz_sales_order",
+      "module": "客户",
+      "title": "销售订单",
+      "columns": [
+        {
+          "key": "code",
+          "label": "订单号",
+          "type": "mono"
+        },
+        {
+          "key": "customer",
+          "label": "客户",
+          "type": "text"
+        },
+        {
+          "key": "source",
+          "label": "来源",
+          "type": "text"
+        },
+        {
+          "key": "amount",
+          "label": "金额",
+          "type": "text"
+        },
+        {
+          "key": "delivery",
+          "label": "交期",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "owner",
+          "label": "销售",
+          "type": "text"
+        },
+        {
+          "key": "time",
+          "label": "下单时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "customer",
+        "source",
+        "amount"
+      ]
+    },
+    {
+      "pageId": "invoice-settlement",
+      "table": "biz_invoice_settlement",
+      "module": "财务协同",
+      "title": "发票与结算",
+      "columns": [
+        {
+          "key": "code",
+          "label": "发票号",
+          "type": "mono"
+        },
+        {
+          "key": "type",
+          "label": "类型",
+          "type": "tag"
+        },
+        {
+          "key": "party",
+          "label": "往来单位",
+          "type": "text"
+        },
+        {
+          "key": "amount",
+          "label": "金额",
+          "type": "text"
+        },
+        {
+          "key": "tax",
+          "label": "税额",
+          "type": "text"
+        },
+        {
+          "key": "date",
+          "label": "开票日期",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "period",
+          "label": "结算周期",
+          "type": "text"
+        },
+        {
+          "key": "method",
+          "label": "结算方式",
+          "type": "text"
+        },
+        {
+          "key": "time",
+          "label": "创建时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "party",
+        "amount",
+        "tax"
+      ]
+    },
+    {
+      "pageId": "indicator",
+      "table": "biz_indicator",
+      "module": "数据",
+      "title": "指标平台",
+      "columns": [
+        {
+          "key": "code",
+          "label": "指标编码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "指标名称",
+          "type": "text"
+        },
+        {
+          "key": "domain",
+          "label": "数据域",
+          "type": "text"
+        },
+        {
+          "key": "unit",
+          "label": "单位",
+          "type": "text"
+        },
+        {
+          "key": "owner",
+          "label": "责任人",
+          "type": "text"
+        },
+        {
+          "key": "refs",
+          "label": "引用次数",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "updated",
+          "label": "更新时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "domain",
+        "unit"
+      ]
+    },
+    {
+      "pageId": "data-quality",
+      "table": "biz_data_quality",
+      "module": "数据",
+      "title": "数据质量与血缘",
+      "columns": [
+        {
+          "key": "code",
+          "label": "规则编号",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "规则名称",
+          "type": "text"
+        },
+        {
+          "key": "table",
+          "label": "对象",
+          "type": "mono"
+        },
+        {
+          "key": "rule",
+          "label": "规则",
+          "type": "text"
+        },
+        {
+          "key": "pass",
+          "label": "通过率",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "owner",
+          "label": "责任人",
+          "type": "text"
+        },
+        {
+          "key": "object",
+          "label": "对象",
+          "type": "text"
+        },
+        {
+          "key": "diff",
+          "label": "差异数",
+          "type": "text"
+        },
+        {
+          "key": "time",
+          "label": "创建时间",
+          "type": "text"
+        },
+        {
+          "key": "source",
+          "label": "源表",
+          "type": "mono"
+        },
+        {
+          "key": "field",
+          "label": "源字段",
+          "type": "mono"
+        },
+        {
+          "key": "target",
+          "label": "目标表",
+          "type": "mono"
+        },
+        {
+          "key": "target_field",
+          "label": "目标字段",
+          "type": "mono"
+        },
+        {
+          "key": "job",
+          "label": "加工作业",
+          "type": "text"
+        },
+        {
+          "key": "level",
+          "label": "层级",
+          "type": "text"
+        },
+        {
+          "key": "path",
+          "label": "API 路径",
+          "type": "mono"
+        },
+        {
+          "key": "caller",
+          "label": "调用方",
+          "type": "text"
+        },
+        {
+          "key": "qps",
+          "label": "QPS",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "table",
+        "rule"
+      ]
+    },
+    {
+      "pageId": "mdm",
+      "table": "biz_mdm",
+      "module": "公共能力",
+      "title": "主数据管理",
+      "columns": [
+        {
+          "key": "code",
+          "label": "物料编码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "物料名称",
+          "type": "text"
+        },
+        {
+          "key": "type",
+          "label": "类型",
+          "type": "text"
+        },
+        {
+          "key": "spec",
+          "label": "规格",
+          "type": "text"
+        },
+        {
+          "key": "unit",
+          "label": "单位",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "updated",
+          "label": "更新时间",
+          "type": "text"
+        },
+        {
+          "key": "cat",
+          "label": "品类",
+          "type": "text"
+        },
+        {
+          "key": "settle",
+          "label": "结算主体",
+          "type": "text"
+        },
+        {
+          "key": "source",
+          "label": "权威源",
+          "type": "text"
+        },
+        {
+          "key": "channel",
+          "label": "渠道",
+          "type": "text"
+        },
+        {
+          "key": "dup",
+          "label": "查重",
+          "type": "tag"
+        },
+        {
+          "key": "locs",
+          "label": "库位数",
+          "type": "text"
+        },
+        {
+          "key": "parent",
+          "label": "上级组织",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "type",
+        "spec"
+      ]
+    },
+    {
+      "pageId": "iam",
+      "table": "biz_iam",
+      "module": "公共能力",
+      "title": "身份与权限",
+      "columns": [
+        {
+          "key": "account",
+          "label": "账号",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "姓名",
+          "type": "text"
+        },
+        {
+          "key": "dept",
+          "label": "部门",
+          "type": "text"
+        },
+        {
+          "key": "role",
+          "label": "角色",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "last",
+          "label": "最近登录",
+          "type": "text"
+        },
+        {
+          "key": "code",
+          "label": "角色编码",
+          "type": "mono"
+        },
+        {
+          "key": "menus",
+          "label": "菜单权限",
+          "type": "text"
+        },
+        {
+          "key": "data",
+          "label": "数据权限",
+          "type": "text"
+        },
+        {
+          "key": "users",
+          "label": "用户数",
+          "type": "text"
+        },
+        {
+          "key": "protocol",
+          "label": "协议",
+          "type": "text"
+        },
+        {
+          "key": "sso",
+          "label": "SSO 状态",
+          "type": "tag"
+        },
+        {
+          "key": "owner",
+          "label": "负责人",
+          "type": "text"
+        },
+        {
+          "key": "updated",
+          "label": "更新时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "account",
+        "name",
+        "dept",
+        "role"
+      ]
+    },
+    {
+      "pageId": "bpm",
+      "table": "biz_bpm",
+      "module": "公共能力",
+      "title": "流程中心",
+      "columns": [
+        {
+          "key": "code",
+          "label": "流程编码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "流程名称",
+          "type": "text"
+        },
+        {
+          "key": "biz",
+          "label": "业务域",
+          "type": "text"
+        },
+        {
+          "key": "ver",
+          "label": "版本",
+          "type": "mono"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "owner",
+          "label": "负责人",
+          "type": "text"
+        },
+        {
+          "key": "updated",
+          "label": "更新时间",
+          "type": "text"
+        },
+        {
+          "key": "def",
+          "label": "流程名称",
+          "type": "text"
+        },
+        {
+          "key": "starter",
+          "label": "发起人",
+          "type": "text"
+        },
+        {
+          "key": "node",
+          "label": "当前节点",
+          "type": "text"
+        },
+        {
+          "key": "time",
+          "label": "开始时间",
+          "type": "text"
+        },
+        {
+          "key": "title",
+          "label": "标题",
+          "type": "text"
+        },
+        {
+          "key": "arrive",
+          "label": "到达时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "biz",
+        "ver"
+      ]
+    },
+    {
+      "pageId": "file",
+      "table": "biz_file",
+      "module": "公共能力",
+      "title": "文件中心",
+      "columns": [
+        {
+          "key": "name",
+          "label": "文件名",
+          "type": "text"
+        },
+        {
+          "key": "type",
+          "label": "类型",
+          "type": "text"
+        },
+        {
+          "key": "size",
+          "label": "大小",
+          "type": "text"
+        },
+        {
+          "key": "ver",
+          "label": "版本",
+          "type": "mono"
+        },
+        {
+          "key": "owner",
+          "label": "上传人",
+          "type": "text"
+        },
+        {
+          "key": "secret",
+          "label": "密级",
+          "type": "tag"
+        },
+        {
+          "key": "time",
+          "label": "上传时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "name",
+        "type",
+        "size",
+        "ver"
+      ]
+    },
+    {
+      "pageId": "coding",
+      "table": "biz_coding",
+      "module": "公共能力",
+      "title": "编码规则",
+      "columns": [
+        {
+          "key": "code",
+          "label": "规则编码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "规则名称",
+          "type": "text"
+        },
+        {
+          "key": "object",
+          "label": "对象",
+          "type": "text"
+        },
+        {
+          "key": "pattern",
+          "label": "规则表达式",
+          "type": "mono"
+        },
+        {
+          "key": "seq",
+          "label": "当前号段",
+          "type": "text"
+        },
+        {
+          "key": "ver",
+          "label": "版本",
+          "type": "mono"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "updated",
+          "label": "更新时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "object",
+        "pattern"
+      ]
+    },
+    {
+      "pageId": "notify",
+      "table": "biz_notify",
+      "module": "公共能力",
+      "title": "通知中心",
+      "columns": [
+        {
+          "key": "code",
+          "label": "模板编码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "模板名称",
+          "type": "text"
+        },
+        {
+          "key": "scene",
+          "label": "场景",
+          "type": "text"
+        },
+        {
+          "key": "channel",
+          "label": "渠道",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "updated",
+          "label": "更新时间",
+          "type": "text"
+        },
+        {
+          "key": "provider",
+          "label": "服务商",
+          "type": "text"
+        },
+        {
+          "key": "limit",
+          "label": "限流",
+          "type": "text"
+        },
+        {
+          "key": "template",
+          "label": "模板",
+          "type": "text"
+        },
+        {
+          "key": "receiver",
+          "label": "接收人",
+          "type": "text"
+        },
+        {
+          "key": "result",
+          "label": "结果",
+          "type": "tag"
+        },
+        {
+          "key": "time",
+          "label": "发送时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "scene",
+        "channel"
+      ]
+    },
+    {
+      "pageId": "audit",
+      "table": "biz_audit",
+      "module": "公共能力",
+      "title": "审计日志",
+      "columns": [
+        {
+          "key": "x_id",
+          "label": "日志编号",
+          "type": "mono"
+        },
+        {
+          "key": "user",
+          "label": "操作人",
+          "type": "text"
+        },
+        {
+          "key": "action",
+          "label": "操作类型",
+          "type": "tag"
+        },
+        {
+          "key": "object",
+          "label": "对象",
+          "type": "text"
+        },
+        {
+          "key": "detail",
+          "label": "详情",
+          "type": "text"
+        },
+        {
+          "key": "ip",
+          "label": "IP",
+          "type": "mono"
+        },
+        {
+          "key": "result",
+          "label": "结果",
+          "type": "tag"
+        },
+        {
+          "key": "time",
+          "label": "时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "x_id",
+        "user",
+        "object",
+        "detail"
+      ]
+    },
+    {
+      "pageId": "integration",
+      "table": "biz_integration",
+      "module": "公共能力",
+      "title": "集成与接口台账",
+      "columns": [
+        {
+          "key": "code",
+          "label": "接口编号",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "接口名称",
+          "type": "text"
+        },
+        {
+          "key": "source",
+          "label": "源系统",
+          "type": "text"
+        },
+        {
+          "key": "target",
+          "label": "目标系统",
+          "type": "text"
+        },
+        {
+          "key": "mode",
+          "label": "方式",
+          "type": "text"
+        },
+        {
+          "key": "sla",
+          "label": "SLA",
+          "type": "text"
+        },
+        {
+          "key": "owner",
+          "label": "责任人",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "system",
+          "label": "对接系统",
+          "type": "text"
+        },
+        {
+          "key": "protocol",
+          "label": "协议",
+          "type": "text"
+        },
+        {
+          "key": "updated",
+          "label": "更新时间",
+          "type": "text"
+        },
+        {
+          "key": "api",
+          "label": "接口",
+          "type": "mono"
+        },
+        {
+          "key": "caller",
+          "label": "调用方",
+          "type": "text"
+        },
+        {
+          "key": "cost",
+          "label": "耗时",
+          "type": "text"
+        },
+        {
+          "key": "result",
+          "label": "结果",
+          "type": "tag"
+        },
+        {
+          "key": "time",
+          "label": "时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "source",
+        "target"
+      ]
+    },
+    {
+      "pageId": "gateway",
+      "table": "biz_gateway",
+      "module": "公共能力",
+      "title": "API 网关管理",
+      "columns": [
+        {
+          "key": "code",
+          "label": "路由 ID",
+          "type": "mono"
+        },
+        {
+          "key": "path",
+          "label": "路径",
+          "type": "mono"
+        },
+        {
+          "key": "target",
+          "label": "后端服务",
+          "type": "text"
+        },
+        {
+          "key": "auth",
+          "label": "鉴权方式",
+          "type": "tag"
+        },
+        {
+          "key": "limit",
+          "label": "限流阈值",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "owner",
+          "label": "责任人",
+          "type": "text"
+        },
+        {
+          "key": "route",
+          "label": "绑定路由",
+          "type": "mono"
+        },
+        {
+          "key": "type",
+          "label": "类型",
+          "type": "tag"
+        },
+        {
+          "key": "rule",
+          "label": "规则",
+          "type": "text"
+        },
+        {
+          "key": "hit",
+          "label": "今日触发",
+          "type": "text"
+        },
+        {
+          "key": "caller",
+          "label": "调用方",
+          "type": "text"
+        },
+        {
+          "key": "cost",
+          "label": "耗时",
+          "type": "text"
+        },
+        {
+          "key": "time",
+          "label": "时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "path",
+        "target",
+        "limit"
+      ]
+    },
+    {
+      "pageId": "event-bus",
+      "table": "biz_event_bus",
+      "module": "公共能力",
+      "title": "消息总线",
+      "columns": [
+        {
+          "key": "code",
+          "label": "主题",
+          "type": "mono"
+        },
+        {
+          "key": "domain",
+          "label": "所属域",
+          "type": "text"
+        },
+        {
+          "key": "producer",
+          "label": "生产方",
+          "type": "text"
+        },
+        {
+          "key": "consumers",
+          "label": "订阅方",
+          "type": "text"
+        },
+        {
+          "key": "tps",
+          "label": "峰值 TPS",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "topic",
+          "label": "主题",
+          "type": "mono"
+        },
+        {
+          "key": "reason",
+          "label": "失败原因",
+          "type": "text"
+        },
+        {
+          "key": "retry",
+          "label": "重试次数",
+          "type": "text"
+        },
+        {
+          "key": "time",
+          "label": "入队时间",
+          "type": "text"
+        },
+        {
+          "key": "group",
+          "label": "消费组",
+          "type": "mono"
+        },
+        {
+          "key": "lag",
+          "label": "积压量",
+          "type": "text"
+        },
+        {
+          "key": "rate",
+          "label": "消费速率",
+          "type": "text"
+        },
+        {
+          "key": "owner",
+          "label": "责任人",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "domain",
+        "producer",
+        "consumers"
+      ]
+    },
+    {
+      "pageId": "rule",
+      "table": "biz_rule",
+      "module": "公共能力",
+      "title": "规则引擎",
+      "columns": [
+        {
+          "key": "code",
+          "label": "规则编码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "规则名称",
+          "type": "text"
+        },
+        {
+          "key": "type",
+          "label": "类型",
+          "type": "text"
+        },
+        {
+          "key": "ver",
+          "label": "版本",
+          "type": "mono"
+        },
+        {
+          "key": "hits",
+          "label": "今日命中",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "owner",
+          "label": "负责人",
+          "type": "text"
+        },
+        {
+          "key": "updated",
+          "label": "更新时间",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "type",
+        "ver"
+      ]
+    },
+    {
+      "pageId": "scheduler",
+      "table": "biz_scheduler",
+      "module": "公共能力",
+      "title": "调度任务",
+      "columns": [
+        {
+          "key": "code",
+          "label": "任务编码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "任务名称",
+          "type": "text"
+        },
+        {
+          "key": "cron",
+          "label": "调度表达式",
+          "type": "mono"
+        },
+        {
+          "key": "last",
+          "label": "上次执行",
+          "type": "text"
+        },
+        {
+          "key": "cost",
+          "label": "耗时",
+          "type": "text"
+        },
+        {
+          "key": "result",
+          "label": "结果",
+          "type": "tag"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "owner",
+          "label": "负责人",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "cron",
+        "last"
+      ]
+    },
+    {
+      "pageId": "cicd",
+      "table": "biz_cicd",
+      "module": "运维管控",
+      "title": "CI/CD 与发布",
+      "columns": [
+        {
+          "key": "code",
+          "label": "流水线",
+          "type": "mono"
+        },
+        {
+          "key": "service",
+          "label": "服务",
+          "type": "text"
+        },
+        {
+          "key": "stage",
+          "label": "当前阶段",
+          "type": "text"
+        },
+        {
+          "key": "duration",
+          "label": "耗时",
+          "type": "text"
+        },
+        {
+          "key": "result",
+          "label": "结果",
+          "type": "tag"
+        },
+        {
+          "key": "trigger",
+          "label": "触发人",
+          "type": "text"
+        },
+        {
+          "key": "time",
+          "label": "开始时间",
+          "type": "text"
+        },
+        {
+          "key": "env",
+          "label": "环境",
+          "type": "tag"
+        },
+        {
+          "key": "ver",
+          "label": "版本",
+          "type": "mono"
+        },
+        {
+          "key": "strategy",
+          "label": "策略",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "name",
+          "label": "环境名称",
+          "type": "text"
+        },
+        {
+          "key": "cluster",
+          "label": "集群",
+          "type": "text"
+        },
+        {
+          "key": "namespace",
+          "label": "命名空间",
+          "type": "mono"
+        },
+        {
+          "key": "owner",
+          "label": "负责人",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "service",
+        "stage",
+        "duration"
+      ]
+    },
+    {
+      "pageId": "config",
+      "table": "biz_config",
+      "module": "运维管控",
+      "title": "配置与密钥",
+      "columns": [
+        {
+          "key": "key",
+          "label": "配置键",
+          "type": "mono"
+        },
+        {
+          "key": "app",
+          "label": "应用",
+          "type": "text"
+        },
+        {
+          "key": "env",
+          "label": "环境",
+          "type": "text"
+        },
+        {
+          "key": "value",
+          "label": "当前值",
+          "type": "text"
+        },
+        {
+          "key": "ver",
+          "label": "版本",
+          "type": "mono"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "updated",
+          "label": "更新时间",
+          "type": "text"
+        },
+        {
+          "key": "type",
+          "label": "类型",
+          "type": "text"
+        },
+        {
+          "key": "rotate",
+          "label": "轮换周期",
+          "type": "text"
+        },
+        {
+          "key": "last",
+          "label": "最近轮换",
+          "type": "text"
+        },
+        {
+          "key": "owner",
+          "label": "负责人",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "key",
+        "app",
+        "env",
+        "value"
+      ]
+    },
+    {
+      "pageId": "org",
+      "table": "biz_org",
+      "module": "系统管理",
+      "title": "组织与岗位",
+      "columns": [
+        {
+          "key": "code",
+          "label": "组织编码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "组织名称",
+          "type": "text"
+        },
+        {
+          "key": "parent",
+          "label": "上级组织",
+          "type": "text"
+        },
+        {
+          "key": "type",
+          "label": "类型",
+          "type": "text"
+        },
+        {
+          "key": "leader",
+          "label": "负责人",
+          "type": "text"
+        },
+        {
+          "key": "users",
+          "label": "人数",
+          "type": "text"
+        },
+        {
+          "key": "source",
+          "label": "权威源",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "parent",
+        "type"
+      ]
+    },
+    {
+      "pageId": "dict-param",
+      "table": "biz_dict_param",
+      "module": "系统管理",
+      "title": "字典与参数",
+      "columns": [
+        {
+          "key": "code",
+          "label": "字典编码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "字典名称",
+          "type": "text"
+        },
+        {
+          "key": "items",
+          "label": "字典项数",
+          "type": "text"
+        },
+        {
+          "key": "owner",
+          "label": "维护人",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "updated",
+          "label": "更新时间",
+          "type": "text"
+        },
+        {
+          "key": "key",
+          "label": "参数键",
+          "type": "mono"
+        },
+        {
+          "key": "value",
+          "label": "参数值",
+          "type": "text"
+        },
+        {
+          "key": "scope",
+          "label": "作用域",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "items",
+        "owner"
+      ]
+    },
+    {
+      "pageId": "tenant-menu",
+      "table": "biz_tenant_menu",
+      "module": "系统管理",
+      "title": "租户与菜单",
+      "columns": [
+        {
+          "key": "code",
+          "label": "租户编码",
+          "type": "mono"
+        },
+        {
+          "key": "name",
+          "label": "租户名称",
+          "type": "text"
+        },
+        {
+          "key": "type",
+          "label": "类型",
+          "type": "text"
+        },
+        {
+          "key": "users",
+          "label": "用户数",
+          "type": "text"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "type": "tag"
+        },
+        {
+          "key": "created",
+          "label": "创建时间",
+          "type": "text"
+        },
+        {
+          "key": "path",
+          "label": "路由",
+          "type": "mono"
+        },
+        {
+          "key": "roles",
+          "label": "可见角色",
+          "type": "text"
+        },
+        {
+          "key": "order",
+          "label": "排序",
+          "type": "text"
+        }
+      ],
+      "searchColumns": [
+        "code",
+        "name",
+        "type",
+        "users"
+      ]
+    }
+  ]
+}

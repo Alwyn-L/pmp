@@ -16,6 +16,23 @@ ARG APP_UID=10001
 FROM ${MAVEN_IMAGE} AS build
 WORKDIR /workspace
 
+# Maven 镜像源：默认使用阿里云加速内网/国内构建；设为 central 时走官方中央仓库
+ARG MAVEN_MIRROR_URL=https://maven.aliyun.com/repository/public
+RUN if [ -n "${MAVEN_MIRROR_URL}" ] && [ "${MAVEN_MIRROR_URL}" != "central" ]; then \
+      mkdir -p /root/.m2 && \
+      printf '%s\n' \
+        '<?xml version="1.0" encoding="UTF-8"?>' \
+        '<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">' \
+        '  <mirrors>' \
+        '    <mirror>' \
+        '      <id>build-mirror</id>' \
+        '      <mirrorOf>central</mirrorOf>' \
+        "      <url>${MAVEN_MIRROR_URL}</url>" \
+        '    </mirror>' \
+        '  </mirrors>' \
+        '</settings>' > /root/.m2/settings.xml; \
+    fi
+
 # 先复制 pom，利用 Docker 层缓存加速依赖下载
 COPY pom.xml ./
 RUN mvn -B -ntp -DskipTests dependency:go-offline

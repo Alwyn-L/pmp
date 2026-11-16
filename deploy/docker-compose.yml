@@ -1,4 +1,4 @@
-﻿# =============================================================================
+# =============================================================================
 # PMP 制造协同平台 · 生产级 Docker Compose 编排
 # 使用方式：cd deploy && cp .env.example .env && 修改 .env 后执行
 #   docker compose up -d --build
@@ -32,7 +32,9 @@ services:
       context: ..
       dockerfile: deploy/frontend/Dockerfile
       args:
+        NODE_IMAGE: ${NODE_IMAGE:-node:22-alpine}
         NGINX_IMAGE: ${NGINX_IMAGE:-nginx:1.27.3-alpine}
+        NPM_REGISTRY: ${NPM_REGISTRY:-https://registry.npmjs.org}
     image: ${FRONTEND_IMAGE:-pmp/frontend:1.0.0}
     environment:
       BACKEND_UPSTREAM: ${BACKEND_UPSTREAM:-backend:8080}
@@ -82,6 +84,7 @@ services:
       args:
         MAVEN_IMAGE: ${MAVEN_IMAGE:-maven:3.9.9-eclipse-temurin-21}
         JRE_IMAGE: ${JRE_IMAGE:-eclipse-temurin:21-jre-alpine}
+        MAVEN_MIRROR_URL: ${MAVEN_MIRROR_URL:-https://maven.aliyun.com/repository/public}
     image: ${BACKEND_IMAGE:-pmp/backend:1.0.0}
     environment:
       TZ: ${TZ:-Asia/Shanghai}
@@ -98,6 +101,14 @@ services:
       MINIO_BUCKET: ${MINIO_BUCKET}
       MINIO_ACCESS_KEY: ${MINIO_ROOT_USER}
       MINIO_SECRET_KEY: ${MINIO_ROOT_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_ACCESS_TTL: ${JWT_ACCESS_TTL:-7200}
+      JWT_REFRESH_TTL: ${JWT_REFRESH_TTL:-604800}
+      AUTH_SINGLE_SESSION: ${AUTH_SINGLE_SESSION:-true}
+      AUTH_FAIL_LIMIT: ${AUTH_FAIL_LIMIT:-5}
+      AUTH_FAIL_WINDOW: ${AUTH_FAIL_WINDOW:-900}
+      AUTH_LOCK_SECONDS: ${AUTH_LOCK_SECONDS:-1800}
+      AUTH_ADMIN_PASSWORD: ${AUTH_ADMIN_PASSWORD}
       JAVA_OPTS: ${JAVA_OPTS:--XX:MaxRAMPercentage=70 -XX:+ExitOnOutOfMemoryError -XX:+UseG1GC -Djava.io.tmpdir=/tmp}
     read_only: true
     tmpfs:

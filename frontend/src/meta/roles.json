@@ -1,0 +1,104 @@
+[
+  {
+    "id": "exec",
+    "name": "高管",
+    "desc": "经营驾驶舱、数据看板与关键指标只读",
+    "dataScope": "ALL"
+  },
+  {
+    "id": "planner",
+    "name": "计划员",
+    "desc": "预测、S&OP、主生产、补货与产能",
+    "dataScope": "DEPT"
+  },
+  {
+    "id": "buyer",
+    "name": "采购员",
+    "desc": "供应商、寻源、采购订单与对账",
+    "dataScope": "DEPT"
+  },
+  {
+    "id": "supplier",
+    "name": "供应商",
+    "desc": "外部协同：订单确认、ASN、对账",
+    "dataScope": "SELF"
+  },
+  {
+    "id": "customer",
+    "name": "客户",
+    "desc": "外部门户：订单查询、物流轨迹、对账与售后",
+    "dataScope": "SELF"
+  },
+  {
+    "id": "rd",
+    "name": "研发工程师",
+    "desc": "物料申请、BOM、工艺、ECN、图纸",
+    "dataScope": "DEPT"
+  },
+  {
+    "id": "prod",
+    "name": "生产主管",
+    "desc": "工单、派工、报工、现场异常",
+    "dataScope": "DEPT"
+  },
+  {
+    "id": "qc",
+    "name": "质量员",
+    "desc": "检验、不良品、批次追溯",
+    "dataScope": "DEPT"
+  },
+  {
+    "id": "wh",
+    "name": "仓管员",
+    "desc": "收货、上架、拣货、发货、盘点",
+    "dataScope": "DEPT"
+  },
+  {
+    "id": "logi",
+    "name": "物流调度",
+    "desc": "运输任务、承运商、在途、运费",
+    "dataScope": "DEPT"
+  },
+  {
+    "id": "sales",
+    "name": "销售客服",
+    "desc": "客户、订单、售后与退换货",
+    "dataScope": "DEPT"
+  },
+  {
+    "id": "fin",
+    "name": "财务",
+    "desc": "应收应付、发票、结算与成本",
+    "dataScope": "DEPT"
+  },
+  {
+    "id": "data",
+    "name": "数据管理员",
+    "desc": "指标、报表、数据质量与服务",
+    "dataScope": "ALL"
+  },
+  {
+    "id": "mdm",
+    "name": "主数据管理员",
+    "desc": "物料/供应商/客户/仓库主数据",
+    "dataScope": "DEPT"
+  },
+  {
+    "id": "admin",
+    "name": "系统管理员",
+    "desc": "全部页面、权限、流程与系统配置",
+    "dataScope": "ALL"
+  },
+  {
+    "id": "sre",
+    "name": "运维工程师",
+    "desc": "CI/CD、监控、配置、资源与密钥",
+    "dataScope": "DEPT"
+  },
+  {
+    "id": "audit",
+    "name": "审计员",
+    "desc": "审计日志、合规与只读核查",
+    "dataScope": "ALL"
+  }
+]

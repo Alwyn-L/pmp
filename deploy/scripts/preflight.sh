@@ -100,6 +100,11 @@ REQUIRED_FILES=(
   "frontend/nginx/templates/default.conf.template"
   "backend/Dockerfile"
   "backend/pom.xml"
+  "backend/src/main/resources/application.yml"
+  "backend/src/main/resources/db/migration/V1__rbac_core.sql"
+  "backend/src/main/resources/db/migration/V2__rbac_seed.sql"
+  "backend/src/main/resources/db/migration/V3__biz_tables.sql"
+  "backend/src/main/resources/db/migration/V4__biz_seed.sql"
   "postgres/init/01-init.sql"
   "redis/redis.conf"
   "minio/init-buckets.sh"
@@ -110,6 +115,17 @@ REQUIRED_FILES=(
 )
 for f in "${REQUIRED_FILES[@]}"; do
   if [ -f "${DEPLOY_DIR}/${f}" ]; then ok "存在 ${f}"; else ng "缺少 ${f}"; fi
+done
+
+# 前端工程位于仓库根目录（构建上下文为仓库根），单独校验
+ROOT_REQUIRED_FILES=(
+  "frontend/package.json"
+  "frontend/vite.config.ts"
+  "frontend/index.html"
+  "frontend/src/main.ts"
+)
+for f in "${ROOT_REQUIRED_FILES[@]}"; do
+  if [ -f "${PROJECT_ROOT}/${f}" ]; then ok "存在 ${f}"; else ng "缺少 ${f}"; fi
 done
 
 # ---------- 5. 编排语法校验 ----------

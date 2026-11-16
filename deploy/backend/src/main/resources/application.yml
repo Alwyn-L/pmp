@@ -50,9 +50,28 @@ spring:
   jackson:
     default-property-inclusion: non_null
     time-zone: Asia/Shanghai
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    baseline-version: 0
+    schemas: app
+    default-schema: app
+    table: flyway_schema_history
+    locations: classpath:db/migration
+    validate-on-migrate: true
 
 app:
   env: ${APP_ENV:prod}
+  auth:
+    # 生产环境必须通过环境变量注入 >=32 字符的随机密钥
+    secret: ${JWT_SECRET:pmp-dev-secret-change-me-0123456789abcdef}
+    access-ttl-seconds: ${JWT_ACCESS_TTL:7200}
+    refresh-ttl-seconds: ${JWT_REFRESH_TTL:604800}
+    single-session: ${AUTH_SINGLE_SESSION:true}
+    fail-limit: ${AUTH_FAIL_LIMIT:5}
+    fail-window-seconds: ${AUTH_FAIL_WINDOW:900}
+    lock-seconds: ${AUTH_LOCK_SECONDS:1800}
+    admin-password: ${AUTH_ADMIN_PASSWORD:Admin@123}
   kafka:
     bootstrap: ${KAFKA_BOOTSTRAP:localhost:9092}
   minio:
